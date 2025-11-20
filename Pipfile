@@ -1,0 +1,32 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[requires]
+python_version = "3.11"
+
+[packages]
+biopython = "*"
+dash = "*"
+dash-bootstrap-components = "*"
+pandas = "*"
+fastapi = "*"
+uvicorn = { extras = ["standard"], version = "*" }
+pydantic = "*"
+click = "*"
+plotly = "*"
+
+[dev-packages]
+pytest = "*"
+pytest-cov = "*"
+mypy = "*"
+ruff = "*"
+black = "*"
+httpx = "*"    # testing FastAPI endpoints
+
+[scripts]
+test = "pytest -q"
+lint = "ruff check ."
+format = "black ."
+serve = "uvicorn fastalavista.api:app --reload"
